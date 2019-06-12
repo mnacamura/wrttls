@@ -1,1 +1,8 @@
 ^LICENSE\.md$
+^\.envrc$
+^\.direnv$
+^result$
+\.nix$
+^\.RData$
+^\.Rhistory$
+^\.Rprofile$

@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
 
 mkShell {
-  inputsFrom = [ (import ./default.nix {}) ];
+  inputsFrom = [ (callPackage ./. {}) ];
   buildInputs = with rPackages; [
     devtools
     roxygen2

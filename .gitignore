@@ -1,3 +1,8 @@
-# Nix direnv related stuff
+# Nix and direnv stuff
 .direnv
 result
+
+# R stuff
+.RData
+.Rhistory
+.Rprofile
