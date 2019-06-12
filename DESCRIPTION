@@ -1,0 +1,12 @@
+Package: writtils
+Title: Miscellaneous Utilities for Prose Writing
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Mitsuhiro",
+           family = "Nakamura",
+           role = c("aut", "cre"),
+           email = "m.nacamura@gmail.com")
+Description: Miscellaneous Utilities for prose writing.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
