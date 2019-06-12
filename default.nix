@@ -19,7 +19,7 @@ rPackages.buildRPackage {
   nativeBuildInputs = depends;
 
   meta = with lib; {
-    description = "Utilities for writing";
+    description = "R package to provide miscellaneous utilities for prose writing";
     homepage    = https://github.com/mnacamura/writtils;
     license     = with licenses; [ mit ];
     maintainers = with maintainers; [ mnacamura ];
