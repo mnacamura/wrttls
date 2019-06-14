@@ -32,7 +32,7 @@ guess_prefix <- function(ss) {
 compress <- function(xs, sep = "--") {
     prefix <- guess_prefix(xs)
     suffixes <- stringr::str_remove(xs, paste0("^", prefix))
-    suffixes <- unique(sort(suffixes))
+    suffixes <- unique(suffixes)
 
     if (!all(stringr::str_detect(suffixes, "^\\d+$")))
         stop("other than numbers found in suffixes")
@@ -45,6 +45,7 @@ compress <- function(xs, sep = "--") {
     if (length(ix) < 2)
         return(paste0(prefix, map[[ix]]))
 
+    ix <- sort(ix)
     purrr::reduce(ix[2:length(ix)], .init = list(ix[1]), .f = function(acc, i) {
         last <- length(acc)
         if (i <= acc[[last]][length(acc[[last]])] + 1)

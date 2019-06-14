@@ -20,6 +20,10 @@ test_that("discontinuous blocks are not compressed", {
   expect_equal(compress(c("a1", "a2", "a3", "a5", "a6")), c("a1--3", "a5", "a6"))
 })
 
+test_that("suffixes with different character lengths have correct order", {
+  expect_equal(compress(paste0("a", 1:10)), "a1--10")
+})
+
 test_that("elements are sorted", {
   expect_equal(compress(c("a3", "a1", "a2")), "a1--3")
 })
