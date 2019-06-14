@@ -3,20 +3,20 @@ guess_prefix <- function(ss) {
     if (is.null(ss))
         stop("no elements found")
 
-    go <- function(prefix, ss) {
+    prefix <- ""
+    repeat {
         heads <- stringr::str_sub(ss, end = 1)
         if ( any(heads == "") || any(heads[1] != heads) )
-            prefix
-        else
-            go(paste0(prefix, heads[1]), stringr::str_sub(ss, 2))
+            break
+        prefix <- paste0(prefix, heads[1])
+        ss <- stringr::str_sub(ss, 2)
     }
-    result <- go("", ss)
 
-    numeral_in_tail <- stringr::str_extract(result, "\\d+$")
+    numeral_in_tail <- stringr::str_extract(prefix, "\\d+$")
     if (is.na(numeral_in_tail))
-        result
+        prefix
     else
-        stringr::str_remove(result, paste0(numeral_in_tail, "$"))
+        stringr::str_remove(prefix, paste0(numeral_in_tail, "$"))
 }
 
 #' Compress continuous parts in a vector of prefixed numbers.
