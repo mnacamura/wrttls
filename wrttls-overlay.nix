@@ -2,6 +2,6 @@ self: super:
 
 {
   rPackages = super.rPackages // {
-    writtils = self.callPackage ./. { pkgs = super; };
+    wrttls = self.callPackage ./. { pkgs = super; };
   };
 }

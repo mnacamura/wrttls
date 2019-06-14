@@ -3,7 +3,7 @@
 with pkgs;
 
 let
-  pname = "writtils";
+  pname = "wrttls";
   version = "0.0.0.9000";
 
   depends = with rPackages; [
@@ -22,7 +22,7 @@ rPackages.buildRPackage {
 
   meta = with lib; {
     description = "R package to provide miscellaneous utilities for prose writing";
-    homepage    = https://github.com/mnacamura/writtils;
+    homepage    = https://github.com/mnacamura/wrttls;
     license     = with licenses; [ mit ];
     maintainers = with maintainers; [ mnacamura ];
     platforms   = R.meta.platforms;

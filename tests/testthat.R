@@ -1,4 +1,4 @@
 library(testthat)
-library(writtils)
+library(wrttls)
 
-test_check("writtils")
+test_check("wrttls")
