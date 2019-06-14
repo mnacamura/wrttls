@@ -7,7 +7,6 @@ let
   version = "0.0.0.9000";
 
   depends = with rPackages; [
-    magrittr
     purrr
     stringr
   ];

@@ -16,5 +16,4 @@ Suggests:
     testthat
 Imports: 
     stringr,
-    purrr,
-    magrittr
+    purrr
