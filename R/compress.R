@@ -38,6 +38,10 @@ compress <- function(xs, sep = "--") {
         stop("other than numbers found in suffixes")
 
     ix <- as.integer(suffixes)
+
+    if (length(unique(ix)) != length(ix))
+        stop("duplicated numbers in suffixes")
+
     map <- list()
     for (i in seq_along(ix))
         map[[ix[i]]] <- suffixes[[i]]

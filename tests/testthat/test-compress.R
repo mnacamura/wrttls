@@ -43,3 +43,7 @@ test_that("numerals are not included in the prefix", {
 test_that("prefix containing numerals are correctly detected", {
   expect_equal(compress(c("a10y_101", "a10y_102", "a10y_103")), c("a10y_101--103"))
 })
+
+test_that("suffixes with duplicated numbers fail", {
+  expect_error(compress(c("a1", "a001")), "duplicated numbers in suffixes")
+})
