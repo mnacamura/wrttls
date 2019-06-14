@@ -26,6 +26,7 @@ guess_prefix <- function(ss) {
 #' @return a vector of prefixed numbers in which continuous parts are
 #'         compressed (character strings)
 #' @export
+#' @importFrom purrr %>%
 #' @examples
 #' compress(c("a1", "a2", "a3", "a5", "a6")) #=> c("a1--3", "a5", "a6")
 #' compress(c("a1", "a2", "a3"), sep = "-") #=> "a1-3"
