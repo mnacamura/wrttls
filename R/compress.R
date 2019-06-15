@@ -40,7 +40,7 @@ compress <- function(xs, sep = "--") {
     if (length(ix) < 2)
         return(paste0(prefix, map[[ix]]))
 
-    group_sequences(ix) %>%
+    group_seq(ix) %>%
         purrr::map(function(group) {
                        l <- length(group)
                        if (l <= 2)

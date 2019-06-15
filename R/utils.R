@@ -36,7 +36,7 @@ make_map <- function(keys, values) {
 ## @return a list of vectors, each of which contains a subset of the given
 ##         numbers. In each subset, numbers are monotonically increasing by
 ##         one.
-group_sequences <- function(ns) {
+group_seq <- function(ns) {
     if (is.null(ns))
         return(list())
 
