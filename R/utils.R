@@ -37,6 +37,9 @@ make_map <- function(keys, values) {
 ##         numbers. In each subset, numbers are monotonically increasing by
 ##         one.
 group_sequences <- function(ns) {
+    if (is.null(ns))
+        return(list())
+
     ns <- sort(ns)
     purrr::reduce(ns[-1], .init = list(ns[1]),
         .f = function(subsets, i) {
