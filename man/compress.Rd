@@ -2,21 +2,21 @@
 % Please edit documentation in R/compress.R
 \name{compress}
 \alias{compress}
-\title{Compress continuous parts in a vector of prefixed numbers.}
+\title{Compress sequential parts in a vector of prefixed numbers.}
 \usage{
 compress(xs, sep = "--")
 }
 \arguments{
 \item{xs}{a vector of prefixed numbers (character strings)}
 
-\item{sep}{a character string to represent continuation}
+\item{sep}{a character string to represent sequencial prefixed numbers}
 }
 \value{
-a vector of prefixed numbers in which continuous parts are
+a vector of prefixed numbers in which sequential parts are
 compressed (character strings)
 }
 \description{
-Compress continuous parts in a vector of prefixed numbers.
+Compress sequential parts in a vector of prefixed numbers.
 }
 \examples{
 compress(c("a1", "a2", "a3", "a5", "a6")) #=> c("a1--3", "a5", "a6")

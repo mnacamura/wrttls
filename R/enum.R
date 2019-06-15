@@ -17,7 +17,7 @@ enum_inline <- function(xs, sep = ",") {
     else if (n == 2)
         paste(xs[1], "and", xs[2])
     else {
-        xs_ <- do.call(paste, c(xs[seq(n-1)], list(sep = paste0(sep, " "))))
+        xs_ <- do.call(paste, c(xs[seq(n - 1)], list(sep = paste0(sep, " "))))
         do.call(paste, c(xs_, xs[n], list(sep = paste0(sep, " and "))))
     }
 }

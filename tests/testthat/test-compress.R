@@ -17,7 +17,7 @@ test_that("continuous more-than-two elements are compressed", {
 })
 
 test_that("discontinuous blocks are not compressed", {
-  expect_equal(compress(c("a1", "a2", "a3", "a5", "a6")), c("a1--3", "a5", "a6"))
+  expect_equal(compress(paste0("a", c(1:3, 5:6))), c("a1--3", "a5", "a6"))
 })
 
 test_that("suffixes with different character lengths have correct order", {
@@ -41,7 +41,7 @@ test_that("numerals are not included in the prefix", {
 })
 
 test_that("prefix containing numerals are correctly detected", {
-  expect_equal(compress(c("a10y_101", "a10y_102", "a10y_103")), c("a10y_101--103"))
+  expect_equal(compress(paste0("a10y_", 101:103)), c("a10y_101--103"))
 })
 
 test_that("suffixes with duplicated numbers fail", {
