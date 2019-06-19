@@ -15,6 +15,8 @@ guess_prefix <- function(ss) {
 #'
 #' @param xs a vector of prefixed numbers (character strings)
 #' @param sep a character string to represent sequencial prefixed numbers
+#' @param level sequencial parts of length longer than or equal to `level` are
+#'        compressed
 #' @return a vector of prefixed numbers in which sequential parts are
 #'         compressed (character strings)
 #' @export
@@ -22,7 +24,8 @@ guess_prefix <- function(ss) {
 #' @examples
 #' compress(c("a1", "a2", "a3", "a5", "a6")) #=> c("a1--3", "a5", "a6")
 #' compress(c("a1", "a2", "a3"), sep = "-") #=> "a1-3"
-compress <- function(xs, sep = "--") {
+#' compress(c("a1", "a2", "a3", "a5", "a6"), level = 2) #=> c("a1--3", "a5--6")
+compress <- function(xs, sep = "--", level = 3) {
     prefix <- guess_prefix(xs)
     suffixes <- stringr::str_remove(xs, paste0("^", prefix)) %>%
         unique
@@ -43,7 +46,7 @@ compress <- function(xs, sep = "--") {
     group_seq(ix) %>%
         purrr::map(function(group) {
                        l <- length(group)
-                       if (l <= 2)
+                       if (l < level)
                            map[group]
                        else
                            list(paste0(map[[group[1]]], sep, map[[group[l]]]))

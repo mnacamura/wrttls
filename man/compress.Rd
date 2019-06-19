@@ -4,12 +4,15 @@
 \alias{compress}
 \title{Compress sequential parts in a vector of prefixed numbers.}
 \usage{
-compress(xs, sep = "--")
+compress(xs, sep = "--", level = 3)
 }
 \arguments{
 \item{xs}{a vector of prefixed numbers (character strings)}
 
 \item{sep}{a character string to represent sequencial prefixed numbers}
+
+\item{level}{sequencial parts of length longer than or equal to \code{level} are
+compressed}
 }
 \value{
 a vector of prefixed numbers in which sequential parts are
@@ -21,4 +24,5 @@ Compress sequential parts in a vector of prefixed numbers.
 \examples{
 compress(c("a1", "a2", "a3", "a5", "a6")) #=> c("a1--3", "a5", "a6")
 compress(c("a1", "a2", "a3"), sep = "-") #=> "a1-3"
+compress(c("a1", "a2", "a3", "a5", "a6"), level = 2) #=> c("a1--3", "a5--6")
 }
