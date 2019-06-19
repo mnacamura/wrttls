@@ -1,16 +1,3 @@
-## Common prefix of a given vector of strings without decimals in its tail.
-##
-## @param ss a vector of strings
-## @return the common prefix without decimals in its tail (string)
-guess_prefix <- function(ss) {
-    prefix <- longest_common_prefix(ss)
-    dec_in_tail <- stringr::str_extract(prefix, "\\d+$")
-    if (is.na(dec_in_tail))
-        prefix
-    else
-        stringr::str_remove(prefix, paste0(dec_in_tail, "$"))
-}
-
 #' Compress sequential parts in a vector of prefixed numbers.
 #'
 #' @param xs a vector of prefixed numbers (character strings)

@@ -16,6 +16,22 @@ longest_common_prefix <- function(ss) {
     }
 }
 
+#' Common prefix of a given vector of strings without decimals in its tail.
+#'
+#' @param ss a vector of strings
+#' @return the common prefix without decimals in its tail (string)
+#' @export
+#' @examples
+#' guess_prefix(c("a11", "a12", "a13")) #=> "a"
+guess_prefix <- function(ss) {
+    prefix <- longest_common_prefix(ss)
+    dec_in_tail <- stringr::str_extract(prefix, "\\d+$")
+    if (is.na(dec_in_tail))
+        prefix
+    else
+        stringr::str_remove(prefix, paste0(dec_in_tail, "$"))
+}
+
 ## Make a map from keys to values.
 ##
 ## @param keys a vector of keys
