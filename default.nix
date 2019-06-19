@@ -4,7 +4,7 @@ with pkgs;
 
 let
   pname = "wrttls";
-  version = "0.0.0.9000";
+  version = "0.0.0.9001";
 
   depends = with rPackages; [
     purrr
