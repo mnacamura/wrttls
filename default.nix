@@ -25,6 +25,6 @@ rPackages.buildRPackage {
     homepage    = https://github.com/mnacamura/wrttls;
     license     = with licenses; [ mit ];
     maintainers = with maintainers; [ mnacamura ];
-    platforms   = R.meta.platforms;
+    inherit (R.meta) platforms;
   };
 }
